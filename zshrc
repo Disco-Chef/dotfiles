@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv)
+plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv rbenv battery ssh-agent)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -15,7 +15,7 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Load rbenv if installed (to manage your Ruby versions)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
+type -a rbenv > /dev/null && eval "$(rbenv init -)" && RPROMPT+='💗 $(rbenv_prompt_info)'
 
 # Load pyenv (to manage your Python versions)
 export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
@@ -59,6 +59,4 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
-export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
-export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
+export BUNDLER_EDITOR="code $@ >/dev/null 2>&1 -a"
