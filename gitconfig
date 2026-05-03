@@ -59,3 +59,6 @@
 
 [init]
   defaultBranch = master
+[user]
+	email = nicolas.agathos@gmail.com
+	name = Nikos Agathos
